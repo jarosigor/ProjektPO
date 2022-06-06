@@ -16,16 +16,17 @@ ext {
     junitVersion = '5.8.2'
 }
 
-sourceCompatibility = '17'
-targetCompatibility = '17'
+sourceCompatibility = '14'
+targetCompatibility = '14'
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
+
+//tasks.withType(JavaCompile) {
+//    options.encoding = 'UTF-8'
+//}
 
 application {
     mainModule = 'com.example.pacman'
-    mainClass = 'com.example.pacman.HelloApplication'
+    mainClass = 'com.example.pacman.Simulation'
 }
 
 javafx {
