@@ -5,4 +5,6 @@ module com.example.pacman {
 
     opens com.example.pacman to javafx.fxml;
     exports com.example.pacman;
+    exports com.example.pacman.Boosters;
+    opens com.example.pacman.Boosters to javafx.fxml;
 }
