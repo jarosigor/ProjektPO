@@ -1,53 +1,38 @@
 package com.example.pacman;
 
+import com.example.pacman.gameUtilities.GameBoard;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Simulation extends Application {
     private static final int SCREEN_WIDTH = 800;
-    private static final int SCREEN_HEIGHT = 800;
-
-    private int map[][];
-
-    private static final int BACKGROUND_CODE = 0;
-    private static final int WALL_CODE = 1;
-    private static final int AISLE_CODE = 2;
-    private static final int POINT_CODE = 3;
-    private static final int APPLE_CODE = 4;
-    private static final int GOLDEN_APPLE_CODE = 5;
-    private static final int RASPBERRY_CODE = 6;
-    private static final int GOLDEN_RASPBERRY_CODE = 7;
-    private static final int BANANA_CODE = 8;
-    private static final int ROTTEN_BANANA_CODE = 9;
-
-    private static int startingPointX = SCREEN_WIDTH/2;
-    private static int startingPointY = SCREEN_HEIGHT/2;
-
+    private static final int SCREEN_HEIGHT = 900;
     private boolean gameStarted;
-    private PacMan pacMan = new PacMan(startingPointX, startingPointY);
+    private boolean debugModeOn;
+    private GameBoard gameBoard;
+
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws RuntimeException {
+
+        System.out.println("Weszliśmy!");
         stage.setTitle("PAC-MAN");
         Canvas canvas = new Canvas(SCREEN_WIDTH, SCREEN_HEIGHT);
         GraphicsContext gc = canvas.getGraphicsContext2D();
+        gameBoard = new GameBoard(gc);
 
         Timeline tl = new Timeline(new KeyFrame(Duration.millis(10),
                 e -> {
@@ -59,23 +44,46 @@ public class Simulation extends Application {
         ));
         tl.setCycleCount(Timeline.INDEFINITE);
 
-        // game controls to present pacman s movement
-        canvas.setOnMouseClicked(e -> gameStarted = true);
+        canvas.setOnMouseClicked(e -> {
+            gameBoard.newGame();
+            gameStarted = true;
+        });
         stage.addEventHandler(KeyEvent.KEY_PRESSED, key -> {
-            if (key.getCode() == KeyCode.UP) {
-                pacMan.setPosY(pacMan.getPosY() - 5);
-                pacMan.setDirrection(0);
-            } else if (key.getCode() == KeyCode.DOWN) {
-                pacMan.setPosY(pacMan.getPosY() + 5);
-                pacMan.setDirrection(2);
-            } else if (key.getCode() == KeyCode.RIGHT) {
-                pacMan.setPosX(pacMan.getPosX() + 5);
-                pacMan.setDirrection(1);
-            } else if (key.getCode() == KeyCode.LEFT) {
-                pacMan.setPosX(pacMan.getPosX() - 5);
-                pacMan.setDirrection(3);
-            } else if (key.getCode() == KeyCode.ESCAPE) {
-                gameStarted = false;
+            if (debugModeOn) {
+                switch(key.getCode()) {
+                    case UP -> {
+                        gameBoard.getPacMan().setPosY(gameBoard.getPacMan().getPosY() - 5);
+                        gameBoard.getPacMan().setDirrection(0);
+                    }
+                    case DOWN -> {
+                        gameBoard.getPacMan().setPosY(gameBoard.getPacMan().getPosY() + 5);
+                        gameBoard.getPacMan().setDirrection(2);
+                    }
+                    case RIGHT -> {
+                        gameBoard.getPacMan().setPosX(gameBoard.getPacMan().getPosX() + 5);
+                        gameBoard.getPacMan().setDirrection(1);
+                    }
+                    case LEFT -> {
+                        gameBoard.getPacMan().setPosX(gameBoard.getPacMan().getPosX() - 5);
+                        gameBoard.getPacMan().setDirrection(3);
+                    }
+                    case ESCAPE -> {
+                        gameStarted = false;
+                        debugModeOn = false;
+                    }
+                }
+            }
+            else {
+                switch(key.getCode()) {
+                    case D -> {
+                        gameBoard.newGame();
+                        debugModeOn = true;
+                    }
+                    case ESCAPE -> {
+                        gameStarted = false;
+                        debugModeOn = false;
+                    }
+                }
             }
         });
 
@@ -84,16 +92,18 @@ public class Simulation extends Application {
         tl.play();
     }
 
-    public void run(GraphicsContext gc) throws IOException {
-
+    public void run(GraphicsContext graphicsContext) throws IOException {
+        graphicsContext.setFill(Color.BLACK);
+        graphicsContext.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         if (gameStarted) {
-            gc.setFill(Color.BLACK);
-            gc.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-            pacMan.draw(gc);
+            gameBoard.draw(graphicsContext);
+
+        }
+        else if (debugModeOn) {
+            gameBoard.draw(graphicsContext);
 
         } else {
-            drawStartScreen(gc);
-            pacMan.reset(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+            drawStartScreen(graphicsContext);
         }
 
     }
@@ -101,13 +111,13 @@ public class Simulation extends Application {
     public void drawStartScreen(GraphicsContext graphicsContext) {
         graphicsContext.setFill(Color.BLACK);
         graphicsContext.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-        graphicsContext.setFont(Font.font(30));
+        graphicsContext.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, FontPosture.ITALIC, 32));
         graphicsContext.setStroke(Color.WHITE);
         graphicsContext.setTextAlign(TextAlignment.CENTER);
-        graphicsContext.strokeText("Start on click",SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+        graphicsContext.strokeText("Start on click",SCREEN_WIDTH/2, SCREEN_HEIGHT/3);
+        graphicsContext.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, FontPosture.ITALIC, 25));
+        graphicsContext.strokeText("For debug mode press D", SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
     }
-
-
 
     public static void main(String[] args) {
         launch();

@@ -4,26 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7725fd2e-9640-4922-a4a6-ed8a62cc83b1" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/BlueGhost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/GameComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/Ghost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/GreenGhost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/PacMan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/RedGhost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/Simulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/WhiteGhost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/down.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/left.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/right.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/up.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7725fd2e-9640-4922-a4a6-ed8a62cc83b1" name="Changes" comment="Added new functionalities">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/components/Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/components/Banana.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/components/GoldenApple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/components/GoldenRaspberry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/components/Heart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/components/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/components/Raspberry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/components/RottenBanana.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/components/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/gameUtilities/GameBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/gameUtilities/GameBoardCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/gameUtilities/GameComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/gameUtilities/MapBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/gameUtilities/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/ghosts/BlueGhost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/ghosts/Ghost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/ghosts/GreenGhost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/ghosts/RedGhost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/ghosts/WhiteGhost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fonts/comici.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/apple.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/banana.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ghost1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ghost2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ghost3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ghost4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/goldenApple.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/goldenRaspberry.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/point.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/raspberry.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/rottenBanana.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/wall.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/maps/map1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/maps/map2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/maps/map3.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pacman/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/BlueGhost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/GameComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/Ghost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/GreenGhost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/PacMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/PacMan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/RedGhost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pacman/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pacman/WhiteGhost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +72,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,15 +96,33 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/images" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/maps" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/fonts" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Simulation">
+  <component name="RunManager" selected="Application.com.example.pacman.Simulation">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.pacman.HelloApplication" />
       <module name="Pac-Man.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.pacman.*" />
+          <option name="PATTERN" value="com.example.pacman.components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.pacman.gameUtilities.MapBuilder" />
+      <module name="Pac-Man.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.pacman.components.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,7 +135,7 @@
       <module name="Pac-Man.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.pacman.*" />
+          <option name="PATTERN" value="com.example.pacman.components.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,8 +145,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Simulation" />
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.com.example.pacman.MapBuilder" />
+        <item itemvalue="Application.com.example.pacman.Simulation" />
+        <item itemvalue="Application.com.example.pacman.HelloApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -115,7 +163,20 @@
       <workItem from="1653864946419" duration="33000" />
       <workItem from="1654009448962" duration="4313000" />
       <workItem from="1654083205265" duration="14189000" />
-      <workItem from="1654541526815" duration="3130000" />
+      <workItem from="1654541526815" duration="5351000" />
+      <workItem from="1654551352876" duration="789000" />
+      <workItem from="1654591250834" duration="2023000" />
+      <workItem from="1654617380761" duration="600000" />
+      <workItem from="1654724971319" duration="398000" />
+      <workItem from="1654875710994" duration="12000" />
+      <workItem from="1654875774604" duration="7191000" />
+      <workItem from="1654971314256" duration="10397000" />
+      <workItem from="1655041690005" duration="15494000" />
+      <workItem from="1655121202672" duration="6162000" />
+      <workItem from="1655140299824" duration="11103000" />
+      <workItem from="1655196459738" duration="663000" />
+      <workItem from="1655214618372" duration="1498000" />
+      <workItem from="1655233109923" duration="8885000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1653852805009</created>
@@ -124,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653852805009</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added new functionalities">
+      <created>1654544862552</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654544862552</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +212,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial comit" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Added new functionalities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new functionalities" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
