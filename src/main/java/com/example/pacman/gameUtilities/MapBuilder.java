@@ -47,11 +47,10 @@ public class MapBuilder {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        Position position = new Position(0, 0);
+
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.get(i).length; j++) {
-                position.setX(i);
-                position.setY(j);
+                Position position = new Position(i, j);
                 if (!list.get(i)[j].isBlank()) {
                     System.out.println(Integer.getInteger(list.get(i)[j]));
                     switch (list.get(i)[j]) {
@@ -84,16 +83,17 @@ public class MapBuilder {
                             gameBoard.set(position, new RottenBanana(position));
                             break;
                         case GREEN_GHOST_CODE:
-                            gameBoard.set(position, new GreenGhost(position));
+                            gameBoard.set(position, new GreenGhost(position, gameBoard));
                             break;
                         case BLUE_GHOST_CODE:
-                            gameBoard.set(position, new BlueGhost(position));
+                            gameBoard.set(position, new BlueGhost(position, gameBoard));
                             break;
                         case RED_GHOST_CODE:
-                            gameBoard.set(position, new RedGhost(position));
+                            gameBoard.set(position, new RedGhost(position, gameBoard));
                             break;
                         case WHITE_GHOST_CODE:
-                            gameBoard.set(position, new WhiteGhost(position));
+                            gameBoard.set(position, new WhiteGhost(position, gameBoard));
+                            break;
                     }
                 }
 

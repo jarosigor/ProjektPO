@@ -1,5 +1,7 @@
 package com.example.pacman.gameUtilities;
 
+import javafx.geometry.Pos;
+
 public class Position {
     private int X = 0;
     private int Y = 0;
@@ -23,5 +25,15 @@ public class Position {
 
     public void setY(int y) {
         Y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "X: " + X + " Y: " + Y;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return  (((Position) obj).getX() == this.getX() && ((Position)obj).getY() == this.getY());
     }
 }

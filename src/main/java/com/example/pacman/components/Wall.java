@@ -15,7 +15,8 @@ public class Wall extends GameComponent {
     public Wall(Position position) {
         this.position = new Position(position.getX(), position.getY());
         try {
-            imgWall = new Image(Files.newInputStream(Path.of("src/main/resources/images/wall.gif")), 40, 40, true, false);
+            imgWall = new Image(Files.newInputStream(Path.of("src/main/resources/images/wall.gif"))
+                    , SIZE, SIZE, true, false);
         } catch (IOException e) {
             System.out.println("!Failed to load wall image!");
         }
