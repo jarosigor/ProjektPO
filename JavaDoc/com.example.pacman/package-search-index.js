@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.pacman","l":"com.example.pacman"},{"m":"com.example.pacman","l":"com.example.pacman.components"},{"m":"com.example.pacman","l":"com.example.pacman.gameUtilities"},{"m":"com.example.pacman","l":"com.example.pacman.ghosts"}];updateSearchResults();

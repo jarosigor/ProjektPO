@@ -1,0 +1,5 @@
+module:com.example.pacman
+com.example.pacman
+com.example.pacman.components
+com.example.pacman.gameUtilities
+com.example.pacman.ghosts
